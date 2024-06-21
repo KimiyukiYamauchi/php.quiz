@@ -20,11 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['keyword'])) {
 
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql=$pdo->prepare('select * from students where name like ?');
-        if (mb_strlen($_POST['keyword']) > 0) {
-            $ret = $sql->execute(['%' . $_POST['keyword']. '%']);
-        } else {
-            $ret = $sql->execute(['%']);
-        }
+        $ret = $sql->execute(['%' . $_POST['keyword']. '%']);
     } catch (PDOException $e) {
         echo '接続に失敗しました: ' . $e->getMessage();
     }
