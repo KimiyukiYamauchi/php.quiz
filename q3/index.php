@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['keyword'])) {
         $sql=$pdo->prepare('select * from students where name like ?');
         $ret = $sql->execute(['%' . $_POST['keyword']. '%']);
     } catch (PDOException $e) {
-        echo '接続に失敗しました: ' . $e->getMessage();
+        echo '接続に失敗しました: ' . $e->getMeessage();
     }
 
     if ($ret) {
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['keyword'])) {
         }
     } else {
         echo '<p>検索に失敗しました。</p>';
-    }
+    }if
 }
 ?>
 <?php require './header.php'; ?>
