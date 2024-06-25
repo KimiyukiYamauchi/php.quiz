@@ -27,7 +27,7 @@ try {
             echo "<td>" . nl2br(htmlspecialchars($student['introduction'])) . "</td>";
             echo "<td>" . htmlspecialchars($student['submitted_at']) . "</td>";
             echo '<td>';
-	          echo '<a href="delete-output.php?id=', htmlspecialchars($row['id']), '">削除</a>';
+	          echo '<a href="process.php?id=', htmlspecialchars($student['id']), '">削除</a>';
 	          echo '</td>';
             echo "</tr>";
         }
