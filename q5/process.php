@@ -5,6 +5,7 @@
 $dsn = 'mysql:host=localhost;dbname=q02;charset=utf8';
 $username = 'admin';
 $password = 'q02';
+$ret = false;
 
 try {
     $pdo = new PDO($dsn, $username, $password);
