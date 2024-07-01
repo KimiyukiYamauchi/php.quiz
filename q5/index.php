@@ -27,7 +27,7 @@ try {
             echo "<td>" . nl2br(htmlspecialchars($student['introduction'])) . "</td>";
             echo "<td>" . htmlspecialchars($student['submitted_at']) . "</td>";
             echo '<td>';
-	          echo '<a href="process.php?id=', htmlspecialchars($student['id']), '">削除</a>';
+	          echo '<a href="process.php?id=', htmlspecialchars($student['id']), '" class="deleteLink">削除</a>';
 	          echo '</td>';
             echo "</tr>";
         }
@@ -40,4 +40,19 @@ try {
 }
 
 ?>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const deleteLinks = document.querySelectorAll('.deleteLink');
+
+    deleteLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            const userConfirmed = confirm('本当に削除しますか？');
+
+            if (!userConfirmed) {
+                event.preventDefault(); // 削除のキャンセル
+            }
+        });
+    });
+});
+</script>
 <?php require './footer.php'; ?>
