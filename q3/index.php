@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['keyword'])) {
         }
     } else {
         echo '<p>検索に失敗しました。</p>';
-    }if
+    }
 }
 ?>
 <?php require './header.php'; ?>
